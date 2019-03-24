@@ -1,0 +1,17 @@
+.release {
+  padding: 2rem 0;
+  border-bottom: 1px solid $light;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  &__version {
+    color: $grey;
+  }
+
+  &__list {
+    padding-left: 0;
+    list-style-type: none;
+  }
+}

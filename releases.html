@@ -1,0 +1,64 @@
+---
+layout: page
+title: Releases
+releases:
+ - title: Wallet
+   version: v1.1.0
+   changelog_url: https://github.com/mimblewimble/grin/releases/tag/v1.0.2
+   copy: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu ornare tellus. Proin lacinia leo urna, lobortis varius ex dapibus quis. Nunc ac libero suscipit.
+   downloads:
+    - label: for macOS
+      url: https://github.com/mimblewimble/grin/releases/download/v1.0.2/grin-v1.0.2-498013742-osx.tgz
+    - label: for Linux
+      url: https://github.com/mimblewimble/grin/releases/download/v1.0.2/grin-v1.0.2-498013739-linux-amd64.tgz
+    - label: for Windows
+      url: https://github.com/mimblewimble/grin/releases/download/v1.0.2/grin-v1.0.2-498013742-osx.tgz
+    - label: for iOS
+      url: https://github.com/mimblewimble/grin/releases/download/v1.0.2/grin-v1.0.2-498013742-osx.tgz
+    - label: for Android
+      url: https://github.com/mimblewimble/grin/releases/download/v1.0.2/grin-v1.0.2-498013742-osx.tgz
+    - label: Source
+      url: https://github.com/mimblewimble/grin/archive/v1.0.2.zip
+ - title: Server
+   version: v1.1.0
+   changelog_url: https://github.com/mimblewimble/grin/releases/tag/v1.0.2
+   copy: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu ornare tellus. Proin lacinia leo urna, lobortis varius ex dapibus quis. Nunc ac libero suscipit.
+   downloads:
+     - label: for macOS
+       url: https://github.com/mimblewimble/grin/releases/download/v1.0.2/grin-v1.0.2-498013742-osx.tgz
+     - label: for Linux
+       url: https://github.com/mimblewimble/grin/releases/download/v1.0.2/grin-v1.0.2-498013739-linux-amd64.tgz
+     - label: Source
+       url: https://github.com/mimblewimble/grin/archive/v1.0.2.zip
+ - title: Miner
+   version: v1.1.0
+   changelog_url: https://github.com/mimblewimble/grin/releases/tag/v1.0.2
+   copy: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu ornare tellus. Proin lacinia leo urna, lobortis varius ex dapibus quis. Nunc ac libero suscipit.
+   downloads:
+     - label: for macOS
+       url: https://github.com/mimblewimble/grin/releases/download/v1.0.2/grin-v1.0.2-498013742-osx.tgz
+     - label: for Linux
+       url: https://github.com/mimblewimble/grin/releases/download/v1.0.2/grin-v1.0.2-498013739-linux-amd64.tgz
+     - label: Source
+       url: https://github.com/mimblewimble/grin/archive/v1.0.2.zip
+---
+
+<h1>{{ page.title }}</h1>
+
+{% for release in page.releases %}
+    <section class="release">
+        <h3 class="release__title">{{ release.title }} <span class="release__version">{{ release.version }}</span></h3>
+
+        {% if release.copy %}
+            <p>{{ release.copy }}</p>
+        {% endif %}
+
+        <ul class="release__list">
+            {% for download in release.downloads %}
+                <li class="release__list-item">
+                    <a href="{{ download.url }}">{{ release.title }} {{ release.version }} {{ download.label }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endfor %}
